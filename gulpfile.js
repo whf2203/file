@@ -1,11 +1,11 @@
 var gulp = require('gulp'); // 引入gulp
-var sass = require('sass'); // 编译scss
+var sass = require('gulp-sass'); // 编译scss
 var autoprefixer = require('gulp-autoprefixer'); // 添加前缀插件
 var minCss = require('gulp-clean-css'); // 压缩css
 var concat = require('gulp-concat'); // 合并文件
 var uglify = require('gulp-uglify'); // 压缩js文件
 var server = require('gulp-webserver'); // 启服务
-var htmlmin = require('htmlmin');
+var htmlmin = require('gulp-htmlmin');
 
 var path = require('path');
 var url = require('url');
@@ -46,4 +46,20 @@ gulp.task('htmlmin', function() {
     gulp.src('src/*.html')
         .pipe(htmlmin(options))
         .pipe('build')
-})
+});
+
+// 操作线上环境编译scss
+gulp.task('sass', function() {
+    gulp.src('src/sass/*.scss')
+        .pipe(concat('src/page/index.scss'))
+        .pipe(sass())
+        .pipe(gulp.dest('build/css'))
+});
+
+// 操作线上环境压缩js
+gulp.task('uglify', function() {
+    gulp.src('src/js/*.js')
+        .pipe(concat('src/page/*.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest('build/js'))
+});
