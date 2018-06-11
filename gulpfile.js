@@ -12,6 +12,9 @@ var fs = require('fs');
 gulp.task('sass', function() {
     gulp.src('src/sass/*.scss')
         .pipe(sass())
+        .pipe(autoprefixer({
+            servers: ['last 2 versions', 'Andorid >=4.0']
+        }))
         .pipe(gulp.dest('build/css'));
 });
 // 启服务
