@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+.box {
+    width: 500px;
+    height: 300px;
+    background: pink;
+    margin: 50px auto;
+}
+
+.box ul {
+    width: 500px;
+    display: flex;
+}
+
+.box ul li {
+    flex: 1;
+    text-align: center;
+    height: 200px;
+}
+
+.box ul li p {
+    line-height: 30px;
+}
+
+.box ul li h1 {
+    width: 100px;
+}
+
+.box ul li h1 img {
+    width: 80%;
+}
