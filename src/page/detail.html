@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../fonts/iconfont.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="top">
+            <sapn class='backlist'><i class="iconfont icon-xiangzuo"></i></sapn>
+            <i class="iconfont icon-fenxiang3"></i>
+        </div>
+    </div>
+    <script id='show' type='text/x-handlebars-template'>
+        {{#each this}}
+        <div class="banner-pic">
+            <img src="{{img}}">
+        </div>
+        <h3>
+            <p>{{title}}</p>
+            <p>￥{{price}}起</p>
+        </h3>
+        {{/each}}
+    </script>
+    <script src='../js/libs/require.js'></script>
+    <script>
+        require(['../js/main.js'], function() {
+            require(['detail']);
+        })
+    </script>
+</body>
+
+</html>

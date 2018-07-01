@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../fonts/iconfont.css">
+</head>
+
+<body>
+    <div id="letter">
+
+    </div>
+    <script id='first-letter' type='text/x-handlebars-template'>
+        <ol class='letter'>
+            {{#each this}}
+            <li>{{title}}</li>
+            {{/each}}
+        </ol>
+    </script>
+    <div class="container">
+        <header>
+            <span class='close'>×</span>
+            <div class="select-place">
+                <input type="text" name="" placeholder="位置/酒店名/关键词">
+                <i class="iconfont icon-fangdajing"></i>
+            </div>
+        </header>
+        <section class='content'>
+            <div>
+                <p>当前位置</p>
+                <h3>定位失败</h3>
+                <p>最近访问</p>
+                <h3>北京</h3>
+                <p>热门城市</p>
+                <li class='hot'>
+                    <span>成都</span>
+                    <span>成都</span>
+                    <span>成都</span>
+                    <span>成都</span>
+                    <span>成都</span>
+                    <span>成都</span>
+                    <span>成都</span>
+                    <span>成都</span>
+                    <span>成都</span>
+                    <span>成都</span>
+                    <span>成都</span>
+                    <span>成都</span>
+                </li>
+                <div class="cityshow">
+                    <div class='menu'>
+
+                    </div>
+                </div>
+                <script id='citylist' type='text/x-handlebars-template'>
+                    {{#each this}}
+                    <p>{{title}}</p>
+                    <ul>
+                        {{#each list}}
+                        <li num-id='{{id}}'>{{name}}</li>
+                        {{/each}}
+                    </ul>
+                    {{/each}}
+                </script>
+            </div>
+        </section>
+    </div>
+
+    <script src='../js/libs/require.js'></script>
+    <script>
+        require(['../js/main.js'], function() {
+            require(['city']);
+        })
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/swiper-4.1.6.min.css">
+    <link rel="stylesheet" href="./fonts/iconfont.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="swiper-container banner">
+
+        </div>
+        <script id='tpl' type='text/x-handlebars-template'>
+            <div class="swiper-wrapper banner-wrap">
+                {{#each this}}
+                <div class="swiper-slide banner-slide"><img src="{{imageUrl}}" alt=""></div>
+                {{/each}}
+            </div>
+            <div class="swiper-pagination"></div>
+        </script>
+    </div>
+    <div class="mask">
+        <p class='move'>
+            <span>全日房<em></em></span>
+            <span>钟点房</span>
+        </p>
+        <ul>
+            <li>
+                <span class='choice'>目的地</span>
+                <p class='change'></p>
+                <i class="iconfont icon-angle-right"></i>
+            </li>
+            <li>
+                <span>搜索</span>
+                <p class='search'>位置/酒店/关键词</p>
+                <i class="iconfont icon-angle-right"></i>
+            </li>
+        </ul>
+        <button class='select-btn'>查找酒店</button>
+    </div>
+
+    <script src='./js/libs/require.js'></script>
+    <script>
+        require(['./js/main.js'], function() {
+            require(['index']);
+        })
+    </script>
+
+</body>
+
+</html>
